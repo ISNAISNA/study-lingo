@@ -10,12 +10,10 @@ import java.time.LocalDateTime;
 
 @Entity
 @NoArgsConstructor
-public class Item {
+public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String category;
     private boolean isCompleted;
-    private LocalDateTime totalTime;
 }
