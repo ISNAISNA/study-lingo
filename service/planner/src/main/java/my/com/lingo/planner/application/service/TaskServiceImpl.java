@@ -7,17 +7,22 @@ import org.springframework.stereotype.Service;
 @Service
 public class TaskServiceImpl implements TaskService {
     @Override
-    public TaskModifyRes updateTask(TaskModifyReq taskModifyReq) {
+    public TaskModifyRes updateTask(long id, TaskModifyReq taskModifyReq) {
         return null;
     }
 
     @Override
-    public TaskDeleteRes deleteTask(TaskDeleteReq taskDeleteReq) {
+    public TaskDeleteRes deleteTask(long id) {
         return null;
     }
 
     @Override
     public TaskRes getTask(long id) {
+        return null;
+    }
+
+    @Override
+    public TaskListRes getTaskListByTaskSetId(long taskSetId) {
         return null;
     }
 }
