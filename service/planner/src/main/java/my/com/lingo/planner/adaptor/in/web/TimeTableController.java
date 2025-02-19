@@ -19,13 +19,13 @@ public class TimeTableController {
         return ResponseEntity.ok(timeTableService.getTimeTable(id));
     }
 
-    @Operation(summary = "Task Set 타임 테이블 조회")
-    @GetMapping("/task-set/{taskSetId}/time-tables}")
+    @Operation(summary = "Task Set 타임 테이블 전체 조회")
+    @GetMapping("/task-set/{taskSetId}/time-tables")
     public ResponseEntity<TimeTableListRes> getTimeTableByTaskSetId(@PathVariable long taskSetId){
         return ResponseEntity.ok(timeTableService.getTimeTableByTaskSetId(taskSetId));
     }
 
-    @Operation(summary = "타임 테이블 조회")
+    @Operation(summary = "Task 타임 테이블 전체 조회")
     @GetMapping("/task-set/{taskSetId}/tasks/{taskId}/time-tables")
     public ResponseEntity<TimeTableListRes> getTimeTableByTaskId(@PathVariable long taskSetId, @PathVariable long taskId){
         return ResponseEntity.ok(timeTableService.getTimeTableByTaskId(taskId));

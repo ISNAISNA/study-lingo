@@ -25,7 +25,7 @@ public class TaskController {
     }
 
     @Operation(summary = "Task 삭제")
-    @PatchMapping("/task-set/{taskSetId}/tasks/{id}}")
+    @DeleteMapping("/task-set/{taskSetId}/tasks/{id}")
     public ResponseEntity<TaskDeleteRes> deleteTask(@PathVariable Long taskSetId, @PathVariable Long id) {
         return ResponseEntity.ok(taskService.deleteTask(id));
     }

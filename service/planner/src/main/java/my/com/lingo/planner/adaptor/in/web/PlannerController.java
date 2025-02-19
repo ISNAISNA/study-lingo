@@ -15,25 +15,25 @@ public class PlannerController {
     private final PlannerService plannerService;
 
     @Operation(summary = "플래너 조회")
-    @GetMapping("/planner-set/{groupId}/planners/{id}")
+    @GetMapping("/planner-set/{setId}/planners/{id}")
     public ResponseEntity<PlannerRes> getPlannerSet(@PathVariable long id){
         return ResponseEntity.ok(plannerService.getPlanner(id));
     }
 
     @Operation(summary = "플래너 추가")
-    @PostMapping("/planner-set/planners")
-    public ResponseEntity<PlannerCreateRes> createPlannerSet(@RequestBody PlannerCreateReq plannerCreateReq){
-        return ResponseEntity.ok(plannerService.createPlanner(plannerCreateReq));
+    @PostMapping("/planner-set/{setId}/planners")
+    public ResponseEntity<PlannerCreateRes> createPlannerSet(@PathVariable long setId, @RequestBody PlannerCreateReq plannerCreateReq){
+        return ResponseEntity.ok(plannerService.createPlanner(setId, plannerCreateReq));
     }
 
     @Operation(summary = "플래너 수정")
-    @PatchMapping("/planner-set/{groupId}/planners/{id}")
+    @PatchMapping("/planner-set/{setId}/planners/{id}")
     public ResponseEntity<PlannerModifyRes> modifyPlannerSet(@PathVariable long id, @RequestBody PlannerModifyReq plannerModifyReq){
         return ResponseEntity.ok(plannerService.updatePlanner(id, plannerModifyReq));
     }
     
     @Operation(summary = "플래너 삭제")
-    @DeleteMapping("/planner-set/{groupId}/planners/{id}")
+    @DeleteMapping("/planner-set/{setId}/planners/{id}")
     public ResponseEntity<PlannerDeleteRes> deletePlannerSet(@PathVariable long id){
         return ResponseEntity.ok(plannerService.deletePlanner(id));
     }
