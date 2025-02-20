@@ -1,14 +1,13 @@
 package my.com.lingo.planner.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Getter
 @NoArgsConstructor
 public class Task {
     @Id
@@ -16,4 +15,16 @@ public class Task {
     private Long id;
 
     private boolean isCompleted;
+
+    @ManyToOne
+    @JoinColumn(name = "tast_set_id")
+    private TaskSet taskSet;
+
+    public void updateTaskSet(TaskSet taskSet) {
+        this.taskSet = taskSet;
+    }
+
+    public void update(boolean isCompleted){
+        this.isCompleted = isCompleted;
+    }
 }

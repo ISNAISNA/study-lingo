@@ -1,4 +1,6 @@
 package my.com.lingo.planner.adaptor.in.web.dto.task;
 
-public record TaskListRes() {
+import java.util.List;
+
+public record TaskListRes(List<TaskRes> taskResList) {
 }

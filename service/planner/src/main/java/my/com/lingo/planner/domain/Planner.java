@@ -19,6 +19,7 @@ public class Planner {
     private String memo;
 
     @ManyToOne
+    @JoinColumn(name = "planner_set_id")
     private PlannerSet plannerSet;
 
     private float achievementRate;

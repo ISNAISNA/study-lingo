@@ -7,4 +7,5 @@ public interface TaskService {
     TaskDeleteRes deleteTask(long id);
     TaskRes getTask(long id);
     TaskListRes getTaskListByTaskSetId(long taskSetId);
+    TaskCreateRes createTask(long setId, TaskCreateReq taskCreateReq);
 }
