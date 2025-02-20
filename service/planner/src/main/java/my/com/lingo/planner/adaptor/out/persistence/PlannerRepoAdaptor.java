@@ -21,20 +21,20 @@ public class PlannerRepoAdaptor implements PlannerRepoPort {
     }
 
     @Override
-    public Planner save(long plannerSetId, Planner planner) {
-        Optional<PlannerSet> findPlannerSet = plannerSetRepo.findById(plannerSetId);
+    public Planner save(long setId, Planner plannerReq) {
+        Optional<PlannerSet> findPlannerSet = plannerSetRepo.findById(setId);
         findPlannerSet.orElseThrow(()->new RuntimeException("Planner Set not found"));
-        planner.updatePlannerSet(findPlannerSet.get());
-        return plannerRepo.save(planner);
+        plannerReq.updatePlannerSet(findPlannerSet.get());
+        return plannerRepo.save(plannerReq);
     }
 
     @Override
-    public Planner update(long id, Planner planner) {
+    public Planner update(long id, Planner plannerReq) {
         Optional<Planner> findPlanner = plannerRepo.findById(id);
         findPlanner.orElseThrow(()->new RuntimeException("Planner not found"));
 
-        findPlanner.ifPresent(planner1 ->{
-            planner.update(planner.getTitle(), planner.getMemo());
+        findPlanner.ifPresent(planner ->{
+            planner.update(plannerReq.getTitle(), plannerReq.getMemo());
         });
         return findPlanner.get();
     }
@@ -48,7 +48,7 @@ public class PlannerRepoAdaptor implements PlannerRepoPort {
     }
 
     @Override
-    public List<Planner> getPlannerByPlannerSetId(long plannerSetId) {
-        return plannerRepo.findPlannerListByPlannerSetId(plannerSetId);
+    public List<Planner> getPlannerByPlannerSetId(long setId) {
+        return plannerRepo.findPlannerListByPlannerSetId(setId);
     }
 }

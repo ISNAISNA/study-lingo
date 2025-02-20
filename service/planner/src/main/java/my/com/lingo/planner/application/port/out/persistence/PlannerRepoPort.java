@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface PlannerRepoPort {
     Planner getPlannerById(long id);
-    Planner save(long plannerSetId, Planner planner);
-    Planner update(long id, Planner planner);
+    Planner save(long setId, Planner plannerReq);
+    Planner update(long id, Planner plannerReq);
     Planner deleteById(long id);
-    List<Planner> getPlannerByPlannerSetId(long plannerSetId);
+    List<Planner> getPlannerByPlannerSetId(long setId);
 }
