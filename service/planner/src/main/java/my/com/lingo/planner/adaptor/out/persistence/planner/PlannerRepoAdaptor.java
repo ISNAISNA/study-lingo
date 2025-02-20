@@ -1,6 +1,7 @@
-package my.com.lingo.planner.adaptor.out.persistence;
+package my.com.lingo.planner.adaptor.out.persistence.planner;
 
 import lombok.RequiredArgsConstructor;
+import my.com.lingo.planner.adaptor.out.persistence.plannerSet.PlannerSetRepo;
 import my.com.lingo.planner.application.port.out.persistence.PlannerRepoPort;
 import my.com.lingo.planner.domain.Planner;
 import my.com.lingo.planner.domain.PlannerSet;

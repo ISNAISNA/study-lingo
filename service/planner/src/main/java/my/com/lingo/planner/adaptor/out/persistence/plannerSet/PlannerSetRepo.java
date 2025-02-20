@@ -1,4 +1,4 @@
-package my.com.lingo.planner.adaptor.out.persistence;
+package my.com.lingo.planner.adaptor.out.persistence.plannerSet;
 
 import my.com.lingo.planner.domain.PlannerSet;
 import org.springframework.data.jpa.repository.JpaRepository;

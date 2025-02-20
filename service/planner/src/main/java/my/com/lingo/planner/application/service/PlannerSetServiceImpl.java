@@ -7,8 +7,10 @@ import my.com.lingo.planner.application.port.out.persistence.PlannerSetRepoPort;
 import my.com.lingo.planner.application.service.mapper.PlannerSetMapper;
 import my.com.lingo.planner.domain.PlannerSet;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 @RequiredArgsConstructor
 public class PlannerSetServiceImpl implements PlannerSetService {
     private final PlannerSetRepoPort plannerSetRepoPort;

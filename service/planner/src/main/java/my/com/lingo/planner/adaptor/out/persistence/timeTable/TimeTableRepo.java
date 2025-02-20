@@ -1,4 +1,4 @@
-package my.com.lingo.planner.adaptor.out.persistence;
+package my.com.lingo.planner.adaptor.out.persistence.timeTable;
 
 import my.com.lingo.planner.domain.TimeTable;
 import org.springframework.data.jpa.repository.JpaRepository;

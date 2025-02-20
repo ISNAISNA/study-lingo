@@ -1,10 +1,12 @@
 package my.com.lingo.planner.application.service;
 
+import lombok.RequiredArgsConstructor;
 import my.com.lingo.planner.adaptor.in.web.dto.timeTable.*;
 import my.com.lingo.planner.application.port.in.TimeTableService;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class TimeTableServiceImpl implements TimeTableService {
     @Override
     public TimeTableCreateRes createTimeTable(TimeTableCreateReq timeTableCreateReq) {
